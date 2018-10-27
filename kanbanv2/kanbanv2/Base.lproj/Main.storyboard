@@ -13,7 +13,7 @@
         <!--Kanban Board-->
         <scene sceneID="uyw-A3-ncJ">
             <objects>
-                <tableViewController id="Yed-mX-iuQ" customClass="TaskController" customModule="kanbanv2" sceneMemberID="viewController">
+                <tableViewController id="Yed-mX-iuQ" customClass="ProjectsController" customModule="kanbanv2" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="3" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yqy-el-7uy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

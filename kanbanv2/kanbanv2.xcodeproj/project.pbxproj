@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83933AD62184E3DA00D92257 /* ProjectsController.swift */; };
 		943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224B32182650A00E9E8BC /* AppDelegate.swift */; };
 		943224B92182650A00E9E8BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943224B72182650A00E9E8BC /* Main.storyboard */; };
 		943224BC2182650A00E9E8BC /* kanbanv2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 943224BA2182650A00E9E8BC /* kanbanv2.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83933AD62184E3DA00D92257 /* ProjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		943224B02182650A00E9E8BC /* kanbanv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanbanv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943224B32182650A00E9E8BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943224B82182650A00E9E8BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				943224B32182650A00E9E8BC /* AppDelegate.swift */,
 				943224CA2183E8B300E9E8BC /* DetailsController.swift */,
+				83933AD62184E3DA00D92257 /* ProjectsController.swift */,
 				943224C82182C82000E9E8BC /* TaskController.swift */,
 				943224B72182650A00E9E8BC /* Main.storyboard */,
 				943224BD2182650C00E9E8BC /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */,
 				943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */,
 				943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */,
+				83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */,
 				943224CE21841EBA00E9E8BC /* Projects+CoreDataClass.swift in Sources */,
 				943224C92182C82000E9E8BC /* TaskController.swift in Sources */,
 				943224BC2182650A00E9E8BC /* kanbanv2.xcdatamodeld in Sources */,
