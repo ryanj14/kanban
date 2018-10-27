@@ -15,8 +15,10 @@ class ProjectsController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        createData()
+        
+        // This creates an entry to the data core entity projects
+        //createData()
+        retreieveData()
     }
     
     private func createData()
@@ -36,5 +38,23 @@ class ProjectsController: UITableViewController
             print("Could not save. \(error), \(error.userInfo)")
         }
         print("It works")
+    }
+    
+    private func retreieveData()
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
+
+        do
+        {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject]
+            {
+                print(data.value(forKey: "name") as! String)
+            }
+        } catch {
+            print("Failed")
+        }
     }
 }
