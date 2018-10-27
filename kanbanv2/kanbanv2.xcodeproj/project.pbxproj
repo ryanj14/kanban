@@ -15,6 +15,8 @@
 		943224C12182650C00E9E8BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943224BF2182650C00E9E8BC /* LaunchScreen.storyboard */; };
 		943224C92182C82000E9E8BC /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224C82182C82000E9E8BC /* TaskController.swift */; };
 		943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CA2183E8B300E9E8BC /* DetailsController.swift */; };
+		943224CE21841EBA00E9E8BC /* Projects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CC21841EBA00E9E8BC /* Projects+CoreDataClass.swift */; };
+		943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		943224C22182650C00E9E8BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		943224C82182C82000E9E8BC /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		943224CA2183E8B300E9E8BC /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		943224CC21841EBA00E9E8BC /* Projects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Projects+CoreDataClass.swift"; path = "kanbanv2/Projects+CoreDataClass.swift"; sourceTree = "<group>"; };
+		943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Projects+CoreDataProperties.swift"; path = "kanbanv2/Projects+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 		943224A72182650A00E9E8BC = {
 			isa = PBXGroup;
 			children = (
+				943224CC21841EBA00E9E8BC /* Projects+CoreDataClass.swift */,
+				943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */,
 				943224B22182650A00E9E8BC /* kanbanv2 */,
 				943224B12182650A00E9E8BC /* Products */,
 			);
@@ -145,8 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				943224B62182650A00E9E8BC /* MainController.swift in Sources */,
+				943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */,
 				943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */,
 				943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */,
+				943224CE21841EBA00E9E8BC /* Projects+CoreDataClass.swift in Sources */,
 				943224C92182C82000E9E8BC /* TaskController.swift in Sources */,
 				943224BC2182650A00E9E8BC /* kanbanv2.xcdatamodeld in Sources */,
 			);

@@ -8,13 +8,15 @@
 
 import UIKit
 
-class TaskController: UIViewController, UITableViewDelegate {
-    
+class TaskController: UITableViewController{
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "testing", sender: self)
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
+    
 }
