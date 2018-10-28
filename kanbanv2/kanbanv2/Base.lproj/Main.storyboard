@@ -46,7 +46,15 @@
                             <outlet property="delegate" destination="Yed-mX-iuQ" id="6D4-5g-AFa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Kanban Board" id="m7b-Lq-YvX"/>
+                    <navigationItem key="navigationItem" title="Kanban Board" id="m7b-Lq-YvX">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="45t-Am-scN">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dh5-uy-e30">
+                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sp-DI-lAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
