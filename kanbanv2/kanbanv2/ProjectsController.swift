@@ -27,9 +27,14 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         
         managedObjectContext = appDelegate.persistentContainer.viewContext
         
-        // This creates an entry to the data core entity projects
-        //createData()
-        //retreieveData()
+        // instantiate our listener notification
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteNotified(n:)), name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
+    }
+    
+    // The function that will trigger a notification once edit button is pressed
+    @objc private func deleteNotified(n:NSNotification)
+    {
+        print("Triggered")
     }
     
     private func createData()
@@ -79,7 +84,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing1")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing")
         
         do
         {
@@ -177,10 +182,11 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         self.tableView.reloadData()
     }
     
-    // This will edit the project page but will test delete function first
+    // This edit button will trigger a notification
     @IBAction func editProject(_ sender: Any)
     {
-        deleteData()
+        NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
+        //deleteData()
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
