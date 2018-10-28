@@ -55,7 +55,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         {
             print("Could not save. \(error), \(error.userInfo)")
         }
-        print("It works")
         counter += 1
     }
     
@@ -85,7 +84,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing2")
         
         do
         {
@@ -133,6 +132,10 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     func configureCell(_ cell: UITableViewCell, withProjects projects: Projects)
     {
         cell.textLabel!.text = projects.name!.description
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ProjectSegue", sender: self)
     }
     
     // MARK: - Fetched results controller
@@ -188,7 +191,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     {
         createAlert(title: "Delete Testing", message: "Are you sure you want to delete Testing?")
         NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
-        //deleteData()
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
@@ -196,10 +198,16 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         tableView.endUpdates()
     }
     
+    // This displays a warning alert about deleting from core data pertaning to the project list
     private func createAlert(title:String, message:String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.deleteData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: {(action) in
             alert.dismiss(animated: true, completion: nil)
         }))
         

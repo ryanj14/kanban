@@ -35,9 +35,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="QdP-k5-jHW" kind="show" id="g53-OM-ZaV"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -68,6 +65,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="QdP-k5-jHW" kind="show" identifier="ProjectSegue" id="zA3-1F-XZQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sp-DI-lAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
