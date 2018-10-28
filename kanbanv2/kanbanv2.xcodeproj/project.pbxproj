@@ -20,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8314C781218631490090D2EA /* kanbanv2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kanbanv2.entitlements; sourceTree = "<group>"; };
 		83933AD62184E3DA00D92257 /* ProjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		943224B02182650A00E9E8BC /* kanbanv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanbanv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943224B32182650A00E9E8BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +46,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8314C77E218631490090D2EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		943224A72182650A00E9E8BC = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +60,7 @@
 				943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */,
 				943224B22182650A00E9E8BC /* kanbanv2 */,
 				943224B12182650A00E9E8BC /* Products */,
+				8314C77E218631490090D2EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +75,7 @@
 		943224B22182650A00E9E8BC /* kanbanv2 */ = {
 			isa = PBXGroup;
 			children = (
+				8314C781218631490090D2EA /* kanbanv2.entitlements */,
 				943224B32182650A00E9E8BC /* AppDelegate.swift */,
 				943224CA2183E8B300E9E8BC /* DetailsController.swift */,
 				83933AD62184E3DA00D92257 /* ProjectsController.swift */,
@@ -111,6 +121,14 @@
 				TargetAttributes = {
 					943224AF2182650A00E9E8BC = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Wallet = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -302,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = kanbanv2/kanbanv2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = kanbanv2/Info.plist;
@@ -321,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = kanbanv2/kanbanv2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N6RP3H788Z;
 				INFOPLIST_FILE = kanbanv2/Info.plist;
