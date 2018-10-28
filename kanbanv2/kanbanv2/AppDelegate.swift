@@ -92,10 +92,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     // MARK: - Push Notification
     
+    // This will ask the user if push notifications are allowed
     func registerForPushNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
             (granted, error) in
             print("Permission granted: \(granted)")
+        }
+    }
+    
+    // This will handle the notification settings later down the line
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
         }
     }
 
