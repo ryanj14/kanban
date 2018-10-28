@@ -14,7 +14,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     private var managedObjectContext: NSManagedObjectContext? = nil
     
     // for the addProjects function
-    private var counter:Int = 0
+    private var counter:Int = 1
     
     override func viewDidLoad()
     {
@@ -71,6 +71,35 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         {
             print("Failed")
         }
+    }
+    
+    private func deleteData()
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing1")
+        
+        do
+        {
+            let test = try managedContext.fetch(fetchRequest)
+            let objectToDelete = test[0] as! NSManagedObject
+            managedContext.delete(objectToDelete)
+            
+            do
+            {
+                try managedContext.save()
+            }
+            catch
+            {
+                print(error)
+            }
+        }
+        catch
+        {
+            print(error)
+        }
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int
