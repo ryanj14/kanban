@@ -49,9 +49,12 @@
                     <navigationItem key="navigationItem" title="Kanban Board" id="m7b-Lq-YvX">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="45t-Am-scN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dh5-uy-e30">
-                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addProject:" destination="Yed-mX-iuQ" eventType="touchUpInside" id="Deg-Sd-rPV"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

@@ -13,6 +13,9 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
 {
     private var managedObjectContext: NSManagedObjectContext? = nil
     
+    // for the addProjects function
+    private var counter:Int = 0
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -36,16 +39,18 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         let userEntity = NSEntityDescription.entity(forEntityName: "Projects", in: managedContext)!
         
         let user = NSManagedObject(entity: userEntity, insertInto: managedContext)
-        user.setValue("Testing", forKey: "name")
+        user.setValue("Testing\(counter)", forKey: "name")
         
         do
         {
             try managedContext.save()
+            
         } catch let error as NSError
         {
             print("Could not save. \(error), \(error.userInfo)")
         }
         print("It works")
+        counter += 1
     }
     
     private func retreieveData()
@@ -61,12 +66,15 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
             {
                 print(data.value(forKey: "name") as! String)
             }
-        } catch {
+        }
+        catch
+        {
             print("Failed")
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
         return fetchedResultsController.sections?.count ?? 0
     }
     
@@ -94,10 +102,10 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     // MARK: - Fetched results controller
     var _fetchedResultsController: NSFetchedResultsController<Projects>? = nil
     
-    var fetchedResultsController: NSFetchedResultsController<Projects> {
-        
-        
-        if _fetchedResultsController != nil {
+    var fetchedResultsController: NSFetchedResultsController<Projects>
+    {
+        if _fetchedResultsController != nil
+        {
             return _fetchedResultsController!
         }
         
@@ -116,10 +124,13 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
-        
-        do {
+    
+        do
+        {
             try _fetchedResultsController!.performFetch()
-        } catch {
+        }
+        catch
+        {
             // Replace this implementation with code to handle the error appropriately.
             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nserror = error as NSError
@@ -129,7 +140,14 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         return _fetchedResultsController!
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    @IBAction func addProject(_ sender: Any)
+    {
+        createData()
+        self.tableView.reloadData()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
+    {
         tableView.endUpdates()
     }
     
