@@ -73,6 +73,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         }
     }
     
+    // This will delete the data stored on that cell from the core data
     private func deleteData()
     {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
@@ -169,10 +170,17 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         return _fetchedResultsController!
     }
     
+    // Adds a default cell called "Testing(w/e the int value is)
     @IBAction func addProject(_ sender: Any)
     {
         createData()
         self.tableView.reloadData()
+    }
+    
+    // This will edit the project page but will test delete function first
+    @IBAction func editProject(_ sender: Any)
+    {
+        deleteData()
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)

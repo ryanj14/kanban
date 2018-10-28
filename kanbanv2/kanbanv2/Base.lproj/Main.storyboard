@@ -47,6 +47,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Kanban Board" id="m7b-Lq-YvX">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="8Qq-AN-cQ0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b2A-bx-EQZ">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editProject:" destination="Yed-mX-iuQ" eventType="touchUpInside" id="uxb-0n-rBR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="45t-Am-scN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dh5-uy-e30">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
