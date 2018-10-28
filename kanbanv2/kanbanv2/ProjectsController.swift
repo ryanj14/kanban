@@ -186,6 +186,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     // This edit button will trigger a notification
     @IBAction func editProject(_ sender: Any)
     {
+        createAlert(title: "Delete Testing", message: "Are you sure you want to delete Testing?")
         NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
         //deleteData()
     }
@@ -193,6 +194,16 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
         tableView.endUpdates()
+    }
+    
+    private func createAlert(title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
