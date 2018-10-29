@@ -84,7 +84,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing2")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing1")
         
         do
         {
@@ -123,8 +123,11 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     
     // This will only work for dynamic table view and not static
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TestingCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TestingCell", for: indexPath) as! ProjectCellTableViewCell
         let projects = fetchedResultsController.object(at: indexPath)
+        cell.deleteButton.tag = indexPath.row
+        // Cannot pass parameters for the selector function
+        cell.deleteButton.addTarget(self, action: #selector(helperCreate), for: UIControl.Event.touchUpInside)
         configureCell(cell, withProjects: projects)
         return cell
     }
@@ -189,7 +192,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     // This edit button will trigger a notification
     @IBAction func editProject(_ sender: Any)
     {
-        createAlert(title: "Delete Testing", message: "Are you sure you want to delete Testing?")
+        
         NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
     }
     
@@ -198,8 +201,14 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         tableView.endUpdates()
     }
     
+    // This is needed to call the createAlert function but selector doesn't allow paramters
+    @objc private func helperCreate()
+    {
+        createAlert(title: "Delete Testing",message: "Are you sure you want to delete Testing?")
+    }
+    
     // This displays a warning alert about deleting from core data pertaning to the project list
-    private func createAlert(title:String, message:String)
+    func createAlert(title:String, message:String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {(action) in

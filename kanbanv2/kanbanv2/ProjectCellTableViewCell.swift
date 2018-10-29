@@ -10,6 +10,7 @@ import UIKit
 
 class ProjectCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var deleteButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
