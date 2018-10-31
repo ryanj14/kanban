@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-
 class ProjectsController: UITableViewController, NSFetchedResultsControllerDelegate
 {
     private var managedObjectContext: NSManagedObjectContext? = nil
@@ -25,7 +24,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         {
             return
         }
-        
         managedObjectContext = appDelegate.persistentContainer.viewContext
         
         // instantiate our listener notification
@@ -117,15 +115,16 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     {
         let sectionInfo = fetchedResultsController.sections![section]
         let count = sectionInfo.numberOfObjects
-        
         return count
     }
     
     // This will only work for dynamic table view and not static
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TestingCell", for: indexPath) as! ProjectCellTableViewCell
         let projects = fetchedResultsController.object(at: indexPath)
         cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.isHidden = true
         // Cannot pass parameters for the selector function
         cell.deleteButton.addTarget(self, action: #selector(helperCreate), for: UIControl.Event.touchUpInside)
         configureCell(cell, withProjects: projects)
@@ -137,7 +136,8 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         cell.textLabel!.text = projects.name!.description
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         performSegue(withIdentifier: "ProjectSegue", sender: self)
     }
     
@@ -192,8 +192,12 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     // This edit button will trigger a notification
     @IBAction func editProject(_ sender: Any)
     {
-        
-        NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
+        tableView?.visibleCells.forEach { cell in
+            if let cell = cell as? ProjectCellTableViewCell {
+                cell.deleteButton.isHidden = false
+            }
+        }
+        //NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
