@@ -16,6 +16,8 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     // for the addProjects function
     private var counter:Int = 1
     
+    @IBOutlet weak var editButton: UIButton!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -189,12 +191,31 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         self.tableView.reloadData()
     }
     
-    // This edit button will trigger a notification
-    @IBAction func editProject(_ sender: Any)
+    // This edit button will only display the visible cells
+    @IBAction func editProject(_ sender: UIButton)
     {
-        tableView?.visibleCells.forEach { cell in
-            if let cell = cell as? ProjectCellTableViewCell {
-                cell.deleteButton.isHidden = false
+        editButton.isSelected = !editButton.isSelected
+        
+        if editButton.isSelected
+        {
+            editButton.setTitle("Done", for: .normal)
+            tableView?.visibleCells.forEach
+                {
+                    cell in if let cell = cell as? ProjectCellTableViewCell
+                    {
+                        cell.deleteButton.isHidden = false
+                    }
+            }
+        }
+        else
+        {
+            editButton.setTitle("Edit", for: .normal)
+            tableView?.visibleCells.forEach
+                {
+                    cell in if let cell = cell as? ProjectCellTableViewCell
+                    {
+                        cell.deleteButton.isHidden = true
+                    }
             }
         }
         //NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)

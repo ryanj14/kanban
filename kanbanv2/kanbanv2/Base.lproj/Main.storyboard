@@ -74,6 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="b2A-bx-EQZ" id="Q6Q-AC-z4Q"/>
                         <segue destination="QdP-k5-jHW" kind="show" identifier="ProjectSegue" id="zA3-1F-XZQ"/>
                     </connections>
                 </tableViewController>
