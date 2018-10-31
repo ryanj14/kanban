@@ -194,31 +194,32 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     // This edit button will only display the visible cells
     @IBAction func editProject(_ sender: UIButton)
     {
+        var state = false
         editButton.isSelected = !editButton.isSelected
         
         if editButton.isSelected
         {
             editButton.setTitle("Done", for: .normal)
-            tableView?.visibleCells.forEach
-                {
-                    cell in if let cell = cell as? ProjectCellTableViewCell
-                    {
-                        cell.deleteButton.isHidden = false
-                    }
-            }
+            toggleDelete(state: state)
         }
         else
         {
+            state = true
             editButton.setTitle("Edit", for: .normal)
-            tableView?.visibleCells.forEach
-                {
-                    cell in if let cell = cell as? ProjectCellTableViewCell
-                    {
-                        cell.deleteButton.isHidden = true
-                    }
-            }
+            toggleDelete(state: state)
         }
         //NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
+    }
+    
+    private func toggleDelete(state:Bool)
+    {
+        tableView?.visibleCells.forEach
+            {
+                cell in if let cell = cell as? ProjectCellTableViewCell
+                {
+                    cell.deleteButton.isHidden = state
+                }
+        }
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
