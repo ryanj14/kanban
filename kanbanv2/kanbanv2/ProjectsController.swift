@@ -113,6 +113,15 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         return fetchedResultsController.sections?.count ?? 0
     }
     
+    // This will only work for dynamic table view and not static
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell : ProjectCellTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TestingCell", for: indexPath) as! ProjectCellTableViewCell
+        let projects = fetchedResultsController.object(at: indexPath)
+        configureCell(cell, withProjects: projects)
+        return cell
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         let sectionInfo = fetchedResultsController.sections![section]
@@ -120,22 +129,16 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         return count
     }
     
-    // This will only work for dynamic table view and not static
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func configureCell(_ cell: ProjectCellTableViewCell, withProjects projects: Projects)
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TestingCell", for: indexPath) as! ProjectCellTableViewCell
-        let projects = fetchedResultsController.object(at: indexPath)
-        cell.deleteButton.tag = indexPath.row
-        cell.deleteButton.isHidden = true
-        // Cannot pass parameters for the selector function
-        cell.deleteButton.addTarget(self, action: #selector(helperCreate), for: UIControl.Event.touchUpInside)
-        configureCell(cell, withProjects: projects)
-        return cell
+        cell.name?.text = projects.name!.description
+        //cell.deleteButton.addTarget(self, action: #selector(helperCreate), for: UIControl.Event.touchUpInside)
     }
     
-    func configureCell(_ cell: UITableViewCell, withProjects projects: Projects)
+    // This is needed to call the createAlert function but selector doesn't allow paramters
+    @objc private func helperCreate()
     {
-        cell.textLabel!.text = projects.name!.description
+        createAlert(title: "Delete Testing",message: "Are you sure you want to delete Testing?")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -217,7 +220,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
             {
                 cell in if let cell = cell as? ProjectCellTableViewCell
                 {
-                    cell.deleteButton.isHidden = state
+                    cell.toggleDelete(state: state)
                 }
         }
     }
@@ -225,12 +228,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
     {
         tableView.endUpdates()
-    }
-    
-    // This is needed to call the createAlert function but selector doesn't allow paramters
-    @objc private func helperCreate()
-    {
-        createAlert(title: "Delete Testing",message: "Are you sure you want to delete Testing?")
     }
     
     // This displays a warning alert about deleting from core data pertaning to the project list
@@ -248,7 +245,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         
         self.present(alert, animated: true, completion: nil)
     }
-    
 }
 
 struct Project : Codable

@@ -6,20 +6,27 @@
 //  Copyright © 2018 Ryan. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ProjectCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var deleteButton: UIButton!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    @IBOutlet weak var name: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func deleteFunction() {
+        print("Button pressed")
+    }
+    
+    func toggleDelete(state:Bool)
+    {
+        print(state)
+       // self.deleteButton.isHidden = state
+    }
 }
