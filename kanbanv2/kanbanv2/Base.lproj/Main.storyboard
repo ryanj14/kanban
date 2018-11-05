@@ -35,9 +35,6 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bx-Oo-uTI">
                                             <rect key="frame" x="295" y="9.5" width="45" height="28.5"/>
                                             <state key="normal" title="Delete"/>
-                                            <connections>
-                                                <action selector="deleteFunction:" destination="OUB-uh-G84" eventType="touchUpInside" id="CkI-AG-sHC"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
