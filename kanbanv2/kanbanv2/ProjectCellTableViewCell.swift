@@ -9,24 +9,20 @@
 import Foundation
 import UIKit
 
-class ProjectCellTableViewCell: UITableViewCell {
+class ProjectCellTableViewCell: UITableViewCell
+{
 
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var name: UILabel!
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool)
+    {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
-    @IBAction func deleteFunction() {
-        print("Button pressed")
-    }
-    
-    func toggleDelete(state:Bool)
+    @IBAction func deleteFunction()
     {
-        print(state)
-       // self.deleteButton.isHidden = state
+        print("Button pressed")
     }
 }

@@ -132,7 +132,8 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     func configureCell(_ cell: ProjectCellTableViewCell, withProjects projects: Projects)
     {
         cell.name?.text = projects.name!.description
-        //cell.deleteButton.addTarget(self, action: #selector(helperCreate), for: UIControl.Event.touchUpInside)
+        cell.deleteButton.isHidden = true
+        cell.deleteButton.addTarget(self, action: #selector(helperCreate), for: UIControl.Event.touchUpInside)
     }
     
     // This is needed to call the createAlert function but selector doesn't allow paramters
@@ -220,7 +221,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
             {
                 cell in if let cell = cell as? ProjectCellTableViewCell
                 {
-                    cell.toggleDelete(state: state)
+                    cell.deleteButton.isHidden = state
                 }
         }
     }
