@@ -15,6 +15,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     
     // for the addProjects function
     private var counter:Int = 1
+    private var coreArray:Array<String> = []
     
     @IBOutlet weak var editButton: UIButton!
     
@@ -27,6 +28,8 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
             return
         }
         managedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        tableView.setEditing(true, animated: true)
         
         // instantiate our listener notification
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNotified(n:)), name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
@@ -133,20 +136,33 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     func configureCell(_ cell: ProjectCellTableViewCell, withProjects projects: Projects)
     {
         cell.editCore.isHidden = true
+        coreArray.append(projects.name!.description)
         cell.name?.text = projects.name!.description
         cell.deleteButton.isHidden = true
         cell.deleteButton.addTarget(self, action: #selector(helperCreate(_:)), for: UIControl.Event.touchUpInside)
     }
     
     // This is needed to call the createAlert function but selector doesn't allow paramters
-    @objc private func helperCreate(_ sender: ProjectCellTableViewCell)
+    @objc private func helperCreate(_ sender: UIButton)
     {
+        print(sender.tag)
         createAlert(title: "Delete Testing",message: "Are you sure you want to delete Testing?")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         performSegue(withIdentifier: "ProjectSegue", sender: self)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.none
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.coreArray[sourceIndexPath.row]
+        coreArray.remove(at: sourceIndexPath.row)
+        coreArray.insert(movedObject, at: destinationIndexPath.row)
+        tableView.reloadData()
     }
     
     // MARK: - Fetched results controller
