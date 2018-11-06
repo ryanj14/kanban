@@ -118,6 +118,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     {
         let cell : ProjectCellTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TestingCell", for: indexPath) as! ProjectCellTableViewCell
         let projects = fetchedResultsController.object(at: indexPath)
+        cell.deleteButton.tag = indexPath.row
         configureCell(cell, withProjects: projects)
         return cell
     }
@@ -131,13 +132,14 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     
     func configureCell(_ cell: ProjectCellTableViewCell, withProjects projects: Projects)
     {
+        cell.editCore.isHidden = true
         cell.name?.text = projects.name!.description
         cell.deleteButton.isHidden = true
-        cell.deleteButton.addTarget(self, action: #selector(helperCreate), for: UIControl.Event.touchUpInside)
+        cell.deleteButton.addTarget(self, action: #selector(helperCreate(_:)), for: UIControl.Event.touchUpInside)
     }
     
     // This is needed to call the createAlert function but selector doesn't allow paramters
-    @objc private func helperCreate()
+    @objc private func helperCreate(_ sender: ProjectCellTableViewCell)
     {
         createAlert(title: "Delete Testing",message: "Are you sure you want to delete Testing?")
     }
@@ -221,7 +223,9 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
             {
                 cell in if let cell = cell as? ProjectCellTableViewCell
                 {
-                    cell.deleteButton.isHidden = state
+                        cell.deleteButton.isHidden = state
+                        cell.editCore.isHidden = state
+                        cell.name.isHidden = !state
                 }
         }
     }

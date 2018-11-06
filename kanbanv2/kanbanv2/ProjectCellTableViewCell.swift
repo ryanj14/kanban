@@ -11,9 +11,10 @@ import UIKit
 
 class ProjectCellTableViewCell: UITableViewCell
 {
-
+    var passNamed:String?
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var editCore: UITextField!
     
     override func setSelected(_ selected: Bool, animated: Bool)
     {

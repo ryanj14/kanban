@@ -26,29 +26,43 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igg-eA-o3W">
-                                            <rect key="frame" x="45" y="12.5" width="42" height="22.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igg-eA-o3W">
+                                            <rect key="frame" x="22" y="13" width="88" height="23"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bx-Oo-uTI">
-                                            <rect key="frame" x="295" y="9.5" width="45" height="28.5"/>
+                                            <rect key="frame" x="295" y="8.5" width="45" height="30.5"/>
                                             <state key="normal" title="Delete"/>
                                         </button>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-bt-J2T">
+                                            <rect key="frame" x="18" y="8.5" width="97" height="30.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="97" id="jlD-px-Qol"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="igg-eA-o3W" secondAttribute="bottom" constant="2" id="3sC-IG-ADC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="igg-eA-o3W" secondAttribute="bottom" constant="1" id="3sC-IG-ADC"/>
+                                        <constraint firstItem="Jge-bt-J2T" firstAttribute="centerX" secondItem="igg-eA-o3W" secondAttribute="centerX" id="4fF-Ms-nW4"/>
                                         <constraint firstItem="4bx-Oo-uTI" firstAttribute="centerY" secondItem="cBh-0L-dYH" secondAttribute="centerY" id="5ml-5U-Jco"/>
                                         <constraint firstItem="4bx-Oo-uTI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="igg-eA-o3W" secondAttribute="trailing" constant="8" symbolic="YES" id="Cyd-A8-TJz"/>
+                                        <constraint firstItem="Jge-bt-J2T" firstAttribute="centerY" secondItem="igg-eA-o3W" secondAttribute="centerY" id="FbZ-15-5WQ"/>
                                         <constraint firstItem="igg-eA-o3W" firstAttribute="centerY" secondItem="cBh-0L-dYH" secondAttribute="centerY" id="Lbv-fl-KUX"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="4bx-Oo-uTI" secondAttribute="bottom" constant="-1" id="PJ7-bN-d2I"/>
+                                        <constraint firstItem="Jge-bt-J2T" firstAttribute="leading" secondItem="cBh-0L-dYH" secondAttribute="leadingMargin" constant="2" id="WOg-Ui-NWV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="4bx-Oo-uTI" secondAttribute="trailing" constant="19" id="Z14-GG-X17"/>
-                                        <constraint firstItem="igg-eA-o3W" firstAttribute="leading" secondItem="cBh-0L-dYH" secondAttribute="leadingMargin" constant="29" id="pQ7-MP-sls"/>
+                                        <constraint firstItem="Jge-bt-J2T" firstAttribute="bottom" secondItem="4bx-Oo-uTI" secondAttribute="bottom" id="brd-ZB-Di0"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Jge-bt-J2T" secondAttribute="bottom" constant="-2" id="mVw-te-N65"/>
+                                        <constraint firstItem="igg-eA-o3W" firstAttribute="leading" secondItem="cBh-0L-dYH" secondAttribute="leadingMargin" constant="6" id="pQ7-MP-sls"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="deleteButton" destination="4bx-Oo-uTI" id="BPI-HM-91S"/>
+                                    <outlet property="editCore" destination="Jge-bt-J2T" id="Pw2-PK-ipn"/>
                                     <outlet property="name" destination="igg-eA-o3W" id="nR5-KL-BFr"/>
                                 </connections>
                             </tableViewCell>
