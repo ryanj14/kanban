@@ -223,9 +223,10 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
             {
                 cell in if let cell = cell as? ProjectCellTableViewCell
                 {
-                        cell.deleteButton.isHidden = state
-                        cell.editCore.isHidden = state
-                        cell.name.isHidden = !state
+                    cell.deleteButton.isHidden = state
+                    cell.editCore.isHidden = state
+                    cell.editCore.text = cell.name.text
+                    cell.name.isHidden = !state
                 }
         }
     }
