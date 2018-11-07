@@ -19,6 +19,7 @@
 		943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CA2183E8B300E9E8BC /* DetailsController.swift */; };
 		943224CE21841EBA00E9E8BC /* Projects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CC21841EBA00E9E8BC /* Projects+CoreDataClass.swift */; };
 		943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */; };
+		94A1F98B2193A904004E5E2A /* DeleteButtonSubClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		943224CA2183E8B300E9E8BC /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		943224CC21841EBA00E9E8BC /* Projects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Projects+CoreDataClass.swift"; path = "kanbanv2/Projects+CoreDataClass.swift"; sourceTree = "<group>"; };
 		943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Projects+CoreDataProperties.swift"; path = "kanbanv2/Projects+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonSubClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				943224C22182650C00E9E8BC /* Info.plist */,
 				943224BA2182650A00E9E8BC /* kanbanv2.xcdatamodeld */,
 				940E7C31218CC30500FFFCD9 /* ProjectsDelegate.swift */,
+				94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */,
 			);
 			path = kanbanv2;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */,
 				830521532186629600832157 /* ProjectCellTableViewCell.swift in Sources */,
 				83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */,
+				94A1F98B2193A904004E5E2A /* DeleteButtonSubClass.swift in Sources */,
 				943224CE21841EBA00E9E8BC /* Projects+CoreDataClass.swift in Sources */,
 				943224C92182C82000E9E8BC /* TaskController.swift in Sources */,
 				943224BC2182650A00E9E8BC /* kanbanv2.xcdatamodeld in Sources */,
