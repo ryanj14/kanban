@@ -33,6 +33,10 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailSegue", sender: self)
+    }
+    
     @IBAction func addAction(_ sender: Any)
     {
         print("add")
