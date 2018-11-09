@@ -8,12 +8,26 @@
 
 import UIKit
 
-class DetailsController: UIViewController {
+class DetailsController: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
     
     @IBOutlet weak var tableView: UITableView!
+    private var coreArray:[String] = ["Created By:", "Date:", "Time:", "Description:", "Taken By:"]
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return coreArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as! DetailsViewCell
+        cell.DetailName?.text = self.coreArray[indexPath.row]
+        return cell
     }
 }

@@ -9,7 +9,11 @@
 import UIKit
 
 class DetailsViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var DetailName: UILabel!
+    @IBOutlet weak var UserDetail: UILabel!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
