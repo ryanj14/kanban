@@ -88,7 +88,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing1")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", name)
         
         do
         {
