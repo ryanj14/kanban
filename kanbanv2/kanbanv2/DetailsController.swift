@@ -28,6 +28,7 @@ class DetailsController: UIViewController, UITableViewDelegate, UITableViewDataS
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as! DetailsViewCell
         cell.DetailName?.text = self.coreArray[indexPath.row]
+        cell.userText.isHidden = true
         return cell
     }
     
@@ -56,6 +57,7 @@ class DetailsController: UIViewController, UITableViewDelegate, UITableViewDataS
                 cell in if let cell = cell as? DetailsViewCell
                 {
                     cell.UserDetail.isHidden = !state
+                    cell.userText.isHidden = state
                 }
         }
     }

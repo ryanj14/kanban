@@ -353,18 +353,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9a-hQ-Skj">
-                                                    <rect key="frame" x="319" y="0.0" width="42" height="53.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9a-hQ-Skj">
+                                                    <rect key="frame" x="264" y="0.0" width="97" height="54"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IfF-sS-CQr">
+                                                    <rect key="frame" x="264" y="11" width="97" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="LP3-RQ-tqm"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="K9a-hQ-Skj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aWX-bF-eZf" secondAttribute="trailing" constant="8" symbolic="YES" id="80I-A8-6Hb"/>
                                                 <constraint firstItem="aWX-bF-eZf" firstAttribute="leading" secondItem="lp8-i3-dKo" secondAttribute="leadingMargin" constant="-2" id="PxJ-as-54k"/>
                                                 <constraint firstItem="K9a-hQ-Skj" firstAttribute="top" secondItem="lp8-i3-dKo" secondAttribute="topMargin" constant="-11" id="Yhm-iz-bQS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="K9a-hQ-Skj" secondAttribute="trailing" constant="-2" id="aqP-QW-Mhs"/>
+                                                <constraint firstItem="IfF-sS-CQr" firstAttribute="trailing" secondItem="K9a-hQ-Skj" secondAttribute="trailing" id="cIb-Bs-ex7"/>
+                                                <constraint firstItem="IfF-sS-CQr" firstAttribute="top" secondItem="lp8-i3-dKo" secondAttribute="topMargin" id="iNb-hC-NMN"/>
+                                                <constraint firstItem="IfF-sS-CQr" firstAttribute="centerY" secondItem="lp8-i3-dKo" secondAttribute="centerY" id="mYr-PZ-3CY"/>
                                                 <constraint firstItem="aWX-bF-eZf" firstAttribute="top" secondItem="lp8-i3-dKo" secondAttribute="topMargin" constant="-11" id="ooh-tp-pl2"/>
                                                 <constraint firstItem="K9a-hQ-Skj" firstAttribute="centerY" secondItem="lp8-i3-dKo" secondAttribute="centerY" id="sJ2-x0-z1R"/>
                                                 <constraint firstItem="K9a-hQ-Skj" firstAttribute="centerY" secondItem="aWX-bF-eZf" secondAttribute="centerY" id="xt7-mg-3AY"/>
@@ -373,6 +385,7 @@
                                         <connections>
                                             <outlet property="DetailName" destination="aWX-bF-eZf" id="fhb-zx-iwL"/>
                                             <outlet property="UserDetail" destination="K9a-hQ-Skj" id="NhK-pF-3HM"/>
+                                            <outlet property="userText" destination="IfF-sS-CQr" id="nHe-tj-iE5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

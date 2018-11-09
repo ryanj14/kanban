@@ -11,6 +11,7 @@ import UIKit
 class DetailsViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var DetailName: UILabel!
     @IBOutlet weak var UserDetail: UILabel!
     
