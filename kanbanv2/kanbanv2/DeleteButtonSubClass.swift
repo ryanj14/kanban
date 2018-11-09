@@ -9,6 +9,17 @@
 import UIKit
 
 class DeleteButtonSubClass: UIButton {
+    
+    var passedName:String
+    
+    required init?(coder aDecoder: NSCoder) {
+        // set myValue before super.init is called
+        self.passedName = "Testing"
+        
+        super.init(coder: aDecoder)
+        
+        // set other operations after super.init, if required
+    }
 
     /*
     // Only override draw() if you perform custom drawing.

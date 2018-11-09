@@ -83,7 +83,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     }
     
     // This will delete the data stored on that cell from the core data
-    private func deleteData()
+    private func deleteData(name:String)
     {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -139,15 +139,16 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         cell.editCore.isHidden = true
         coreArray.append(projects.name!.description)
         cell.name?.text = projects.name!.description
+        cell.deleteButton.passedName = projects.name!.description
         cell.deleteButton.isHidden = true
         cell.deleteButton.addTarget(self, action: #selector(helperCreate(_:)), for: UIControl.Event.touchUpInside)
     }
     
     // This is needed to call the createAlert function but selector doesn't allow paramters
-    @objc private func helperCreate(_ sender: UIButton)
+    @objc private func helperCreate(_ sender: DeleteButtonSubClass)
     {
-        print(sender.tag)
-        createAlert(title: "Delete Testing",message: "Are you sure you want to delete Testing?")
+        let dataName = sender.passedName
+        createAlert(title: "Delete \(dataName)",message: "Are you sure you want to delete \(dataName)?", data: dataName)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -255,12 +256,12 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     }
     
     // This displays a warning alert about deleting from core data pertaning to the project list
-    func createAlert(title:String, message:String)
+    func createAlert(title:String, message:String, data:String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {(action) in
             alert.dismiss(animated: true, completion: nil)
-            self.deleteData()
+            self.deleteData(name: data)
         }))
         
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: {(action) in

@@ -12,7 +12,7 @@ import UIKit
 class ProjectCellTableViewCell: UITableViewCell
 {
     var passNamed:String?
-    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var deleteButton: DeleteButtonSubClass!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var editCore: UITextField!
     
