@@ -10,7 +10,7 @@ import UIKit
 
 class DetailsController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private var coreArray:[String] = ["Created By:", "Date:", "Time:", "Description:", "Taken By:"]
     
@@ -29,5 +29,34 @@ class DetailsController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as! DetailsViewCell
         cell.DetailName?.text = self.coreArray[indexPath.row]
         return cell
+    }
+    
+    @IBAction func editAction(_ sender: Any)
+    {
+        var state = false
+        editButton.isSelected = !editButton.isSelected
+        
+        if editButton.isSelected
+        {
+            editButton.setTitle("Done", for: .normal)
+            toggleDelete(state: state)
+        }
+        else
+        {
+            state = true
+            editButton.setTitle("Edit", for: .normal)
+            toggleDelete(state: state)
+        }
+    }
+    
+    private func toggleDelete(state:Bool)
+    {
+        tableView?.visibleCells.forEach
+            {
+                cell in if let cell = cell as? DetailsViewCell
+                {
+                    cell.UserDetail.isHidden = !state
+                }
+        }
     }
 }

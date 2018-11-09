@@ -328,6 +328,9 @@
                                                 <rect key="frame" x="264" y="7" width="95" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Edit"/>
+                                                <connections>
+                                                    <action selector="editAction:" destination="F4Q-Wc-cw3" eventType="touchUpInside" id="Kjl-11-5BP"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -402,6 +405,7 @@
                         <viewLayoutGuide key="safeArea" id="qlg-TD-cQG"/>
                     </view>
                     <connections>
+                        <outlet property="editButton" destination="YQg-dS-gGp" id="gj5-gO-eoJ"/>
                         <outlet property="tableView" destination="CWb-CT-eOb" id="vft-iZ-xoz"/>
                     </connections>
                 </viewController>
