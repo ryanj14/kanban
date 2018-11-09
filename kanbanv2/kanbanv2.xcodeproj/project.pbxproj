@@ -19,6 +19,7 @@
 		943224CE21841EBA00E9E8BC /* Projects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CC21841EBA00E9E8BC /* Projects+CoreDataClass.swift */; };
 		943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */; };
 		94A1F98B2193A904004E5E2A /* DeleteButtonSubClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */; };
+		94A1F98D21955132004E5E2A /* DetailsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A1F98C21955132004E5E2A /* DetailsViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		943224CC21841EBA00E9E8BC /* Projects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Projects+CoreDataClass.swift"; path = "kanbanv2/Projects+CoreDataClass.swift"; sourceTree = "<group>"; };
 		943224CD21841EBA00E9E8BC /* Projects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Projects+CoreDataProperties.swift"; path = "kanbanv2/Projects+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonSubClass.swift; sourceTree = "<group>"; };
+		94A1F98C21955132004E5E2A /* DetailsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				8314C781218631490090D2EA /* kanbanv2.entitlements */,
 				943224B32182650A00E9E8BC /* AppDelegate.swift */,
 				943224CA2183E8B300E9E8BC /* DetailsController.swift */,
+				94A1F98C21955132004E5E2A /* DetailsViewCell.swift */,
 				94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */,
 				83933AD62184E3DA00D92257 /* ProjectsController.swift */,
 				830521522186629600832157 /* ProjectCellTableViewCell.swift */,
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */,
+				94A1F98D21955132004E5E2A /* DetailsViewCell.swift in Sources */,
 				943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */,
 				943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */,
 				830521532186629600832157 /* ProjectCellTableViewCell.swift in Sources */,
