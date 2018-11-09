@@ -30,6 +30,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         managedObjectContext = appDelegate.persistentContainer.viewContext
         
         tableView.setEditing(true, animated: true)
+        tableView.allowsSelectionDuringEditing = true
         
         // instantiate our listener notification
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNotified(n:)), name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
@@ -151,6 +152,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        print("segue")
         performSegue(withIdentifier: "ProjectSegue", sender: self)
     }
     
@@ -162,7 +164,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         let movedObject = self.coreArray[sourceIndexPath.row]
         coreArray.remove(at: sourceIndexPath.row)
         coreArray.insert(movedObject, at: destinationIndexPath.row)
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     
     // MARK: - Fetched results controller

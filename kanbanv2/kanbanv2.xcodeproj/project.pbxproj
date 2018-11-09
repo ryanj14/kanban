@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		830521532186629600832157 /* ProjectCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830521522186629600832157 /* ProjectCellTableViewCell.swift */; };
 		83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83933AD62184E3DA00D92257 /* ProjectsController.swift */; };
-		940E7C32218CC30500FFFCD9 /* ProjectsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E7C31218CC30500FFFCD9 /* ProjectsDelegate.swift */; };
 		943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224B32182650A00E9E8BC /* AppDelegate.swift */; };
 		943224B92182650A00E9E8BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943224B72182650A00E9E8BC /* Main.storyboard */; };
 		943224BC2182650A00E9E8BC /* kanbanv2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 943224BA2182650A00E9E8BC /* kanbanv2.xcdatamodeld */; };
@@ -26,7 +25,6 @@
 		830521522186629600832157 /* ProjectCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCellTableViewCell.swift; sourceTree = "<group>"; };
 		8314C781218631490090D2EA /* kanbanv2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kanbanv2.entitlements; sourceTree = "<group>"; };
 		83933AD62184E3DA00D92257 /* ProjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
-		940E7C31218CC30500FFFCD9 /* ProjectsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsDelegate.swift; sourceTree = "<group>"; };
 		943224B02182650A00E9E8BC /* kanbanv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanbanv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943224B32182650A00E9E8BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943224B82182650A00E9E8BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +82,7 @@
 				8314C781218631490090D2EA /* kanbanv2.entitlements */,
 				943224B32182650A00E9E8BC /* AppDelegate.swift */,
 				943224CA2183E8B300E9E8BC /* DetailsController.swift */,
+				94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */,
 				83933AD62184E3DA00D92257 /* ProjectsController.swift */,
 				830521522186629600832157 /* ProjectCellTableViewCell.swift */,
 				943224C82182C82000E9E8BC /* TaskController.swift */,
@@ -92,8 +91,6 @@
 				943224BF2182650C00E9E8BC /* LaunchScreen.storyboard */,
 				943224C22182650C00E9E8BC /* Info.plist */,
 				943224BA2182650A00E9E8BC /* kanbanv2.xcdatamodeld */,
-				940E7C31218CC30500FFFCD9 /* ProjectsDelegate.swift */,
-				94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */,
 			);
 			path = kanbanv2;
 			sourceTree = "<group>";
@@ -179,7 +176,6 @@
 			files = (
 				943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */,
 				943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */,
-				940E7C32218CC30500FFFCD9 /* ProjectsDelegate.swift in Sources */,
 				943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */,
 				830521532186629600832157 /* ProjectCellTableViewCell.swift in Sources */,
 				83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */,
