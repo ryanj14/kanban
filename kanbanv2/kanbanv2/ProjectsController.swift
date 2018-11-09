@@ -153,7 +153,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print("segue")
         performSegue(withIdentifier: "ProjectSegue", sender: self)
     }
     

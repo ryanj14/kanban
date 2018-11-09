@@ -18,7 +18,8 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.setEditing(true, animated: true)
+        tableView.allowsSelectionDuringEditing = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -33,8 +34,21 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
+    {
         performSegue(withIdentifier: "detailSegue", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle
+    {
+        return UITableViewCell.EditingStyle.none
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    {
+        let movedObject = self.coreArray[sourceIndexPath.row]
+        coreArray.remove(at: sourceIndexPath.row)
+        coreArray.insert(movedObject, at: destinationIndexPath.row)
     }
     
     @IBAction func addAction(_ sender: Any)
