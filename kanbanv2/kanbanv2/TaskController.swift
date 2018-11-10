@@ -31,6 +31,7 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskViewCell
         cell.projectTitle?.text = coreArray[indexPath.row]
+        cell.deleteButton.isHidden = false
         return cell
     }
     
