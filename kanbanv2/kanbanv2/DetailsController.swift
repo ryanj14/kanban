@@ -17,6 +17,8 @@ class DetailsController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        tableView.allowsSelection = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
