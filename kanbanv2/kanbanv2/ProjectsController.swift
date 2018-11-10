@@ -157,11 +157,13 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         performSegue(withIdentifier: "ProjectSegue", sender: self)
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle
+    {
         return UITableViewCell.EditingStyle.none
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    {
         let movedObject = self.coreArray[sourceIndexPath.row]
         coreArray.remove(at: sourceIndexPath.row)
         coreArray.insert(movedObject, at: destinationIndexPath.row)
