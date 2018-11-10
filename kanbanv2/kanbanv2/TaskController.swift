@@ -31,7 +31,7 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskViewCell
         cell.projectTitle?.text = coreArray[indexPath.row]
-        cell.deleteButton.isHidden = false
+        cell.deleteButton.isHidden = true
         return cell
     }
     
@@ -59,6 +59,30 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func editAction(_ sender: Any)
     {
-        print("edit")
+        var state = false
+        editButton.isSelected = !editButton.isSelected
+        
+        if editButton.isSelected
+        {
+            editButton.setTitle("Done", for: .normal)
+            toggleDelete(state: state)
+        }
+        else
+        {
+            state = true
+            editButton.setTitle("Edit", for: .normal)
+            toggleDelete(state: state)
+        }
+    }
+    
+    private func toggleDelete(state:Bool)
+    {
+        tableView?.visibleCells.forEach
+            {
+                cell in if let cell = cell as? TaskViewCell
+                {
+                    cell.deleteButton.isHidden = state
+                }
+        }
     }
 }
