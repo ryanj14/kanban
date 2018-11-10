@@ -12,6 +12,7 @@ class TaskViewCell: UITableViewCell
 {
     @IBOutlet weak var projectTitle: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var taskLabel: UITextField!
     
     override func setSelected(_ selected: Bool, animated: Bool)
     {
