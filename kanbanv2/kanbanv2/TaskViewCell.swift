@@ -6,6 +6,7 @@
 //  Copyright © 2018 Ryan. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class TaskViewCell: UITableViewCell

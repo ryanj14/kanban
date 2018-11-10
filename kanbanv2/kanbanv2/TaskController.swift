@@ -10,10 +10,10 @@ import UIKit
 
 class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
-    private var coreArray:[String] = ["Created By:", "Date:", "Time:", "Description:", "Taken By:"]
+    private var coreArray = [["Created By:", "Date:"], ["Time:", "Description:", "Taken By:"], ["testing"]]
+    let headerTitles = ["To Do", "In Progress", "Finished"]
     
     override func viewDidLoad()
     {
@@ -22,18 +22,22 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.allowsSelectionDuringEditing = true
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return coreArray.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return coreArray.count
+        return coreArray[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskViewCell
-        cell.projectTitle?.text = coreArray[indexPath.row]
+        cell.projectTitle?.text = coreArray[indexPath.section][indexPath.row]
         cell.deleteButton.isHidden = true
         cell.taskLabel.isHidden = true
-        cell.taskLabel.text = coreArray[indexPath.row]
+        cell.taskLabel.text = coreArray[indexPath.section][indexPath.row]
         return cell
     }
     
@@ -52,6 +56,14 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let movedObject = self.coreArray[sourceIndexPath.row]
         coreArray.remove(at: sourceIndexPath.row)
         coreArray.insert(movedObject, at: destinationIndexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section < headerTitles.count {
+            return headerTitles[section]
+        } else {
+            return nil
+        }
     }
     
     @IBAction func addAction(_ sender: Any)
