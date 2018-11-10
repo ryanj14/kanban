@@ -153,7 +153,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print("segue")
         performSegue(withIdentifier: "ProjectSegue", sender: self)
     }
     
@@ -264,14 +263,18 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {(action) in
             alert.dismiss(animated: true, completion: nil)
             self.deleteData(name: data)
+            self.toggleDelete(state:false)
         }))
         
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: {(action) in
             alert.dismiss(animated: true, completion: nil)
+            self.toggleDelete(state:false)
         }))
         
         self.present(alert, animated: true, completion: nil)
+        
     }
+    
 }
 
 struct Project : Codable
