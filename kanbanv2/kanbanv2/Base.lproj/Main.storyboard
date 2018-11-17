@@ -166,10 +166,10 @@
                                                     <rect key="frame" x="261" y="6" width="46" height="30"/>
                                                     <state key="normal" title="Delete"/>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bk2-az-uzf">
-                                                    <rect key="frame" x="5" y="7" width="154" height="30"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bk2-az-uzf">
+                                                    <rect key="frame" x="13" y="6" width="108" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="154" id="h0W-zr-cvR"/>
+                                                        <constraint firstAttribute="width" constant="110" id="BjF-bP-YJr"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -178,18 +178,18 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="XBu-O9-G5c" secondAttribute="trailing" constant="87" id="AxH-9U-Zfp"/>
-                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="baseline" secondItem="XBu-O9-G5c" secondAttribute="firstBaseline" id="EbZ-qA-hoc"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a2D-bZ-f60" secondAttribute="trailing" constant="20" symbolic="YES" id="G1W-qP-33u"/>
-                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="top" secondItem="t9e-lt-UVq" secondAttribute="topMargin" constant="-24" id="JHT-4X-j4E"/>
+                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="top" secondItem="t9e-lt-UVq" secondAttribute="topMargin" constant="-30" id="JuT-Kn-HLm"/>
                                                 <constraint firstItem="XBu-O9-G5c" firstAttribute="centerY" secondItem="t9e-lt-UVq" secondAttribute="centerY" id="Lhw-4d-jAQ"/>
                                                 <constraint firstItem="XBu-O9-G5c" firstAttribute="top" secondItem="t9e-lt-UVq" secondAttribute="topMargin" constant="-25" id="Pp7-Nr-WQO"/>
                                                 <constraint firstItem="a2D-bZ-f60" firstAttribute="centerY" secondItem="t9e-lt-UVq" secondAttribute="centerY" id="S1N-Qw-KGH"/>
+                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="firstBaseline" secondItem="XBu-O9-G5c" secondAttribute="baseline" id="aW3-hi-jpe"/>
                                                 <constraint firstItem="a2D-bZ-f60" firstAttribute="top" secondItem="t9e-lt-UVq" secondAttribute="topMargin" constant="-11" id="dE1-do-faX"/>
-                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="firstBaseline" secondItem="XBu-O9-G5c" secondAttribute="baseline" id="e1C-1s-QlL"/>
-                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="leading" secondItem="t9e-lt-UVq" secondAttribute="leadingMargin" constant="-15" id="gso-XI-g7M"/>
-                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="centerY" secondItem="a2D-bZ-f60" secondAttribute="centerY" id="iwo-re-YW6"/>
+                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="baseline" secondItem="XBu-O9-G5c" secondAttribute="firstBaseline" id="doG-XU-zpe"/>
+                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="baseline" secondItem="XBu-O9-G5c" secondAttribute="baseline" id="kuY-39-hUY"/>
                                                 <constraint firstItem="a2D-bZ-f60" firstAttribute="leading" secondItem="t9e-lt-UVq" secondAttribute="leadingMargin" constant="-2" id="nmt-x1-AWV"/>
-                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="baseline" secondItem="XBu-O9-G5c" secondAttribute="baseline" id="q1s-zb-sux"/>
+                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="leading" secondItem="a2D-bZ-f60" secondAttribute="leading" id="sOx-KY-LFE"/>
+                                                <constraint firstItem="Bk2-az-uzf" firstAttribute="centerY" secondItem="a2D-bZ-f60" secondAttribute="centerY" id="tuP-MM-lje"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
