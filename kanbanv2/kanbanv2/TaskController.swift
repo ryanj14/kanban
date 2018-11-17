@@ -47,8 +47,13 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //let cell = tableView.cellForRow(at: indexPath) as! TaskViewCell
         //DispatchQueue.main.async { self.performSegue(withIdentifier: "detailSegue", sender: self) }
         self.performSegue(withIdentifier: "detailSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle
     {
         return UITableViewCell.EditingStyle.none
