@@ -10,6 +10,7 @@
 		830521532186629600832157 /* ProjectCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830521522186629600832157 /* ProjectCellTableViewCell.swift */; };
 		830BD5B321964C2400806F93 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BD5B221964C2400806F93 /* TaskViewCell.swift */; };
 		83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83933AD62184E3DA00D92257 /* ProjectsController.swift */; };
+		83C3D08D21A0918600BBE205 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3D08C21A0918600BBE205 /* TableViewCell.swift */; };
 		943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224B32182650A00E9E8BC /* AppDelegate.swift */; };
 		943224B92182650A00E9E8BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943224B72182650A00E9E8BC /* Main.storyboard */; };
 		943224BC2182650A00E9E8BC /* kanbanv2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 943224BA2182650A00E9E8BC /* kanbanv2.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 		830BD5B221964C2400806F93 /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		8314C781218631490090D2EA /* kanbanv2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kanbanv2.entitlements; sourceTree = "<group>"; };
 		83933AD62184E3DA00D92257 /* ProjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
+		83C3D08C21A0918600BBE205 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		943224B02182650A00E9E8BC /* kanbanv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanbanv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943224B32182650A00E9E8BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943224B82182650A00E9E8BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				943224BF2182650C00E9E8BC /* LaunchScreen.storyboard */,
 				943224C22182650C00E9E8BC /* Info.plist */,
 				943224BA2182650A00E9E8BC /* kanbanv2.xcdatamodeld */,
+				83C3D08C21A0918600BBE205 /* TableViewCell.swift */,
 			);
 			path = kanbanv2;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */,
 				94A1F98B2193A904004E5E2A /* DeleteButtonSubClass.swift in Sources */,
 				943224CE21841EBA00E9E8BC /* Projects+CoreDataClass.swift in Sources */,
+				83C3D08D21A0918600BBE205 /* TableViewCell.swift in Sources */,
 				943224C92182C82000E9E8BC /* TaskController.swift in Sources */,
 				943224BC2182650A00E9E8BC /* kanbanv2.xcdatamodeld in Sources */,
 			);

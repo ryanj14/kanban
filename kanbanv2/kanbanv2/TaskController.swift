@@ -18,6 +18,7 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        //tableView.delegate = self
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
     }
@@ -41,11 +42,13 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        performSegue(withIdentifier: "detailSegue", sender: self)
+        //let cell = tableView.cellForRow(at: indexPath) as! TaskViewCell
+        //DispatchQueue.main.async { self.performSegue(withIdentifier: "detailSegue", sender: self) }
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
     }
-    
+
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle
     {
         return UITableViewCell.EditingStyle.none
