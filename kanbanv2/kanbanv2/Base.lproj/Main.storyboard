@@ -219,6 +219,7 @@
                     </view>
                     <connections>
                         <outlet property="editButton" destination="fMe-9n-Khq" id="bs6-nY-qoJ"/>
+                        <outlet property="projectTitle" destination="ZB1-AX-Ciu" id="oR2-lT-JGK"/>
                         <outlet property="tableView" destination="s3w-pF-FRF" id="xDo-xy-7Dn"/>
                         <segue destination="F4Q-Wc-cw3" kind="show" identifier="detailSegue" id="cTa-Fu-6aY"/>
                     </connections>

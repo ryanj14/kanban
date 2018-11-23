@@ -153,7 +153,21 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        performSegue(withIdentifier: "ProjectSegue", sender: self)
+        self.performSegue(withIdentifier: "ProjectSegue", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ProjectSegue" {
+            if let indexPath = sender as? IndexPath {
+                let cell = tableView.cellForRow(at: indexPath) as! ProjectCellTableViewCell
+                if let nextViewController = segue.destination as? TaskController {
+                    nextViewController.titleName = cell.name.text!
+                    print(cell.name.text!)
+                } else {
+                    print("not working")
+                }
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle

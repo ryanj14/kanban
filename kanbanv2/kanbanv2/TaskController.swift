@@ -12,15 +12,18 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
 {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
+    var titleName:String = ""
     private var coreArray = [["Created By:", "Date:"], ["Time:", "Description:", "Taken By:"], ["testing"]]
     let headerTitles = ["To Do", "In Progress", "Finished"]
-    
+    @IBOutlet weak var projectTitle: UINavigationItem!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         //tableView.delegate = self
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
+        
+        projectTitle.title = titleName
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
