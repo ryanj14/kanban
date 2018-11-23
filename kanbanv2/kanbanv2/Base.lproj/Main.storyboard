@@ -37,7 +37,7 @@
                                             <state key="normal" title="Delete"/>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-bt-J2T">
-                                            <rect key="frame" x="22" y="8.6666666666666661" width="97" height="30.333333333333336"/>
+                                            <rect key="frame" x="22" y="9" width="97" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="97" id="jlD-px-Qol"/>
                                             </constraints>
@@ -45,25 +45,36 @@
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-Oo-eJK">
+                                            <rect key="frame" x="160" y="8.6666666666666661" width="51" height="30.333333333333336"/>
+                                            <state key="normal" title="Update"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="igg-eA-o3W" secondAttribute="bottom" constant="1" id="3sC-IG-ADC"/>
                                         <constraint firstItem="Jge-bt-J2T" firstAttribute="centerX" secondItem="igg-eA-o3W" secondAttribute="centerX" id="4fF-Ms-nW4"/>
                                         <constraint firstItem="4bx-Oo-uTI" firstAttribute="centerY" secondItem="cBh-0L-dYH" secondAttribute="centerY" id="5ml-5U-Jco"/>
                                         <constraint firstItem="4bx-Oo-uTI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="igg-eA-o3W" secondAttribute="trailing" constant="8" symbolic="YES" id="Cyd-A8-TJz"/>
+                                        <constraint firstItem="cwG-Oo-eJK" firstAttribute="centerY" secondItem="cBh-0L-dYH" secondAttribute="centerY" id="DFo-sS-bqi"/>
                                         <constraint firstItem="Jge-bt-J2T" firstAttribute="centerY" secondItem="igg-eA-o3W" secondAttribute="centerY" id="FbZ-15-5WQ"/>
+                                        <constraint firstItem="cwG-Oo-eJK" firstAttribute="leading" secondItem="Jge-bt-J2T" secondAttribute="trailing" constant="41" id="I5c-Z5-Zon"/>
                                         <constraint firstItem="igg-eA-o3W" firstAttribute="centerY" secondItem="cBh-0L-dYH" secondAttribute="centerY" id="Lbv-fl-KUX"/>
+                                        <constraint firstItem="cwG-Oo-eJK" firstAttribute="firstBaseline" secondItem="Jge-bt-J2T" secondAttribute="baseline" constant="1" id="RhC-tO-tU9"/>
                                         <constraint firstItem="Jge-bt-J2T" firstAttribute="leading" secondItem="cBh-0L-dYH" secondAttribute="leadingMargin" constant="2" id="WOg-Ui-NWV"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="4bx-Oo-uTI" secondAttribute="trailing" constant="19" id="Z14-GG-X17"/>
                                         <constraint firstItem="Jge-bt-J2T" firstAttribute="bottom" secondItem="4bx-Oo-uTI" secondAttribute="bottom" id="brd-ZB-Di0"/>
+                                        <constraint firstItem="cwG-Oo-eJK" firstAttribute="baseline" secondItem="Jge-bt-J2T" secondAttribute="firstBaseline" constant="1" id="cg3-gq-CbY"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Jge-bt-J2T" secondAttribute="bottom" constant="-2" id="mVw-te-N65"/>
                                         <constraint firstItem="igg-eA-o3W" firstAttribute="leading" secondItem="cBh-0L-dYH" secondAttribute="leadingMargin" constant="6" id="pQ7-MP-sls"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cwG-Oo-eJK" secondAttribute="bottom" constant="-2" id="ypO-2W-wP1"/>
+                                        <constraint firstItem="cwG-Oo-eJK" firstAttribute="baseline" secondItem="Jge-bt-J2T" secondAttribute="baseline" constant="1" id="zU9-Hl-ymS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="deleteButton" destination="4bx-Oo-uTI" id="BPI-HM-91S"/>
                                     <outlet property="editCore" destination="Jge-bt-J2T" id="Pw2-PK-ipn"/>
                                     <outlet property="name" destination="igg-eA-o3W" id="nR5-KL-BFr"/>
+                                    <outlet property="updateButton" destination="cwG-Oo-eJK" id="iDh-R6-UIw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

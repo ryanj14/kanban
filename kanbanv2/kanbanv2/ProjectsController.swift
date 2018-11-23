@@ -32,8 +32,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
         
-        updateData()
-        
         // instantiate our listener notification
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNotified(n:)), name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
     }
@@ -173,7 +171,9 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         cell.name?.text = projects.name!.description
         cell.deleteButton.passedName = projects.name!.description
         cell.deleteButton.isHidden = true
+        cell.updateButton.isHidden = true
         cell.deleteButton.addTarget(self, action: #selector(helperCreate(_:)), for: UIControl.Event.touchUpInside)
+        cell.updateButton.addTarget(self, action: #selector(updateCoreData(_:)), for: UIControl.Event.touchUpInside)
     }
     
     // This is needed to call the createAlert function but selector doesn't allow paramters
@@ -181,6 +181,11 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
     {
         let dataName = sender.passedName
         createAlert(title: "Delete \(dataName)",message: "Are you sure you want to delete \(dataName)?", data: dataName)
+    }
+    
+    @objc private func updateCoreData(_ sender: Any)
+    {
+        print("Hi")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -291,6 +296,7 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
                 {
                     cell.deleteButton.isHidden = state
                     cell.editCore.isHidden = state
+                    cell.updateButton.isHidden = state
                     cell.editCore.text = cell.name.text
                     cell.name.isHidden = !state
                 }
