@@ -16,13 +16,12 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private var coreArray = [["Created By:", "Date:"], ["Time:", "Description:", "Taken By:"], ["testing"]]
     let headerTitles = ["To Do", "In Progress", "Finished"]
     @IBOutlet weak var projectTitle: UINavigationItem!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //tableView.delegate = self
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
-        
         projectTitle.title = titleName
     }
     
@@ -49,7 +48,7 @@ class TaskController: UIViewController, UITableViewDelegate, UITableViewDataSour
     {
         //let cell = tableView.cellForRow(at: indexPath) as! TaskViewCell
         //DispatchQueue.main.async { self.performSegue(withIdentifier: "detailSegue", sender: self) }
-        self.performSegue(withIdentifier: "detailSegue", sender: self)
+        self.performSegue(withIdentifier: "detailSegue", sender: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 

@@ -32,6 +32,8 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         tableView.setEditing(true, animated: true)
         tableView.allowsSelectionDuringEditing = true
         
+        updateData()
+        
         // instantiate our listener notification
         NotificationCenter.default.addObserver(self, selector: #selector(deleteNotified(n:)), name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
     }
@@ -95,6 +97,36 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
             let test = try managedContext.fetch(fetchRequest)
             let objectToDelete = test[0] as! NSManagedObject
             managedContext.delete(objectToDelete)
+            
+            do
+            {
+                try managedContext.save()
+            }
+            catch
+            {
+                print(error)
+            }
+        }
+        catch
+        {
+            print(error)
+        }
+        self.tableView.reloadData()
+    }
+    
+    private func updateData()
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing")
+        
+        do
+        {
+            let test = try managedContext.fetch(fetchRequest)
+            let objectUpdate = test[0] as! NSManagedObject
+            
+           objectUpdate.setValue("Cheese", forKey: "name")
             
             do
             {

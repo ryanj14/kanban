@@ -13,6 +13,7 @@ class DetailsController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private var coreArray:[String] = ["Created By:", "Date:", "Time:", "Description:", "Taken By:"]
+    var titleName:String = ""
     
     override func viewDidLoad()
     {
