@@ -36,7 +36,7 @@
                                             <rect key="frame" x="330" y="8.6666666666666661" width="45" height="30.333333333333336"/>
                                             <state key="normal" title="Delete"/>
                                         </button>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-bt-J2T">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-bt-J2T" customClass="ProjectTextField" customModule="kanbanv2">
                                             <rect key="frame" x="22" y="9" width="97" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="97" id="jlD-px-Qol"/>

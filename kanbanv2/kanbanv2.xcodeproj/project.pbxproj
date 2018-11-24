@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		830521532186629600832157 /* ProjectCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830521522186629600832157 /* ProjectCellTableViewCell.swift */; };
 		830BD5B321964C2400806F93 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BD5B221964C2400806F93 /* TaskViewCell.swift */; };
+		837C4AE221A8D8DA00CA1848 /* ProjectTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837C4AE121A8D8DA00CA1848 /* ProjectTextField.swift */; };
 		83933AD72184E3DA00D92257 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83933AD62184E3DA00D92257 /* ProjectsController.swift */; };
 		83C3D08D21A0918600BBE205 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C3D08C21A0918600BBE205 /* TableViewCell.swift */; };
 		943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943224B32182650A00E9E8BC /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		830521522186629600832157 /* ProjectCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCellTableViewCell.swift; sourceTree = "<group>"; };
 		830BD5B221964C2400806F93 /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		8314C781218631490090D2EA /* kanbanv2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kanbanv2.entitlements; sourceTree = "<group>"; };
+		837C4AE121A8D8DA00CA1848 /* ProjectTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTextField.swift; sourceTree = "<group>"; };
 		83933AD62184E3DA00D92257 /* ProjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		83C3D08C21A0918600BBE205 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		943224B02182650A00E9E8BC /* kanbanv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanbanv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 				94A1F98A2193A904004E5E2A /* DeleteButtonSubClass.swift */,
 				83933AD62184E3DA00D92257 /* ProjectsController.swift */,
 				830521522186629600832157 /* ProjectCellTableViewCell.swift */,
+				837C4AE121A8D8DA00CA1848 /* ProjectTextField.swift */,
 				943224C82182C82000E9E8BC /* TaskController.swift */,
 				830BD5B221964C2400806F93 /* TaskViewCell.swift */,
 				943224B72182650A00E9E8BC /* Main.storyboard */,
@@ -185,6 +188,7 @@
 			files = (
 				943224CF21841EBA00E9E8BC /* Projects+CoreDataProperties.swift in Sources */,
 				830BD5B321964C2400806F93 /* TaskViewCell.swift in Sources */,
+				837C4AE221A8D8DA00CA1848 /* ProjectTextField.swift in Sources */,
 				94A1F98D21955132004E5E2A /* DetailsViewCell.swift in Sources */,
 				943224B42182650A00E9E8BC /* AppDelegate.swift in Sources */,
 				943224CB2183E8B300E9E8BC /* DetailsController.swift in Sources */,

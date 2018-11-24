@@ -112,19 +112,19 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         self.tableView.reloadData()
     }
     
-    private func updateData()
+    private func updateData(dataName:String, textName:String)
     {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Projects")
-        fetchRequest.predicate = NSPredicate(format: "name = %@", "Testing")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", dataName)
         
         do
         {
             let test = try managedContext.fetch(fetchRequest)
             let objectUpdate = test[0] as! NSManagedObject
             
-           objectUpdate.setValue("Cheese", forKey: "name")
+           objectUpdate.setValue(textName, forKey: "name")
             
             do
             {
@@ -139,7 +139,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         {
             print(error)
         }
-        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int
@@ -171,9 +170,10 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         cell.name?.text = projects.name!.description
         cell.deleteButton.passedName = projects.name!.description
         cell.deleteButton.isHidden = true
+        cell.editCore.textFieldName = projects.name!.description
+        cell.editCore.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         cell.updateButton.isHidden = true
         cell.deleteButton.addTarget(self, action: #selector(helperCreate(_:)), for: UIControl.Event.touchUpInside)
-        cell.updateButton.addTarget(self, action: #selector(updateCoreData(_:)), for: UIControl.Event.touchUpInside)
     }
     
     // This is needed to call the createAlert function but selector doesn't allow paramters
@@ -183,9 +183,11 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         createAlert(title: "Delete \(dataName)",message: "Are you sure you want to delete \(dataName)?", data: dataName)
     }
     
-    @objc private func updateCoreData(_ sender: Any)
-    {
-        print("Hi")
+    @objc func textFieldDidChange(_ textField: ProjectTextField) {
+        let originalName:String = textField.textFieldName!
+        let changedName:String = textField.text!
+        textField.textFieldName = changedName
+        updateData(dataName: originalName, textName: changedName)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -278,12 +280,14 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         {
             editButton.setTitle("Done", for: .normal)
             toggleDelete(state: state)
+            
         }
         else
         {
             state = true
             editButton.setTitle("Edit", for: .normal)
             toggleDelete(state: state)
+            self.tableView.reloadData()
         }
         //NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "TestNot"), object: nil)
     }

@@ -14,7 +14,7 @@ class ProjectCellTableViewCell: UITableViewCell
     var passNamed:String?
     @IBOutlet weak var deleteButton: DeleteButtonSubClass!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var editCore: UITextField!
+    @IBOutlet weak var editCore: ProjectTextField!
     @IBOutlet weak var updateButton: UIButton!
     
     override func setSelected(_ selected: Bool, animated: Bool)
