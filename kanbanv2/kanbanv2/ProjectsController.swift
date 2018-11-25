@@ -172,7 +172,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
         cell.deleteButton.isHidden = true
         cell.editCore.textFieldName = projects.name!.description
         cell.editCore.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        cell.updateButton.isHidden = true
         cell.deleteButton.addTarget(self, action: #selector(helperCreate(_:)), for: UIControl.Event.touchUpInside)
     }
     
@@ -300,7 +299,6 @@ class ProjectsController: UITableViewController, NSFetchedResultsControllerDeleg
                 {
                     cell.deleteButton.isHidden = state
                     cell.editCore.isHidden = state
-                    cell.updateButton.isHidden = state
                     cell.editCore.text = cell.name.text
                     cell.name.isHidden = !state
                 }
